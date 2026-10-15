@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Sistem Toko</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen flex">
+
+  <aside id="sidebar" class="fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-gray-200 flex flex-col transition-transform duration-200 -translate-x-full lg:translate-x-0 lg:static">
+    <div class="h-16 flex items-center gap-3 px-6 border-b">
+      <div class="w-8 h-8 rounded bg-blue-600 text-white flex items-center justify-center font-bold text-sm">ST</div>
+      <div>
+        <h2 class="font-bold text-gray-900 leading-none">Sistem Toko</h2>
+        <span class="text-xs text-gray-400">Admin Panel</span>
+      </div>
+    </div>
+
+    <div class="flex-1 overflow-y-auto px-4 py-4 space-y-1">
+      <a href="dashboard.html" class="sidebar-link active">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg>
+        <span>Dashboard</span>
+      </a>
+
+      <a href="products.html" class="sidebar-link">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+        </svg>
+        <span>Data Barang</span>
+      </a>
+
+      <a href="product-form.html" class="sidebar-link">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+        </svg>
+        <span>Tambah Barang</span>
+      </a>
+
+      <a href="#" class="sidebar-link">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+        </svg>
+        <span>Kategori</span>
+      </a>
+
+      <a href="#" class="sidebar-link">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+        </svg>
+        <span>Transaksi</span>
+      </a>
+
+      <a href="#" class="sidebar-link">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        </svg>
+        <span>Laporan</span>
+      </a>
+    </div>
+
+    <div class="p-4 border-t">
+      <div class="flex items-center gap-3 mb-3">
+        <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 font-bold flex items-center justify-center text-xs">A</div>
+        <div class="overflow-hidden">
+          <h4 class="text-sm font-semibold text-gray-800 truncate">Administrator</h4>
+          <p class="text-xs text-gray-400 truncate">admin</p>
+        </div>
+      </div>
+      <a href="login.html" class="btn btn-outline w-full text-xs text-red-600 hover:bg-red-50 hover:border-red-200">Logout</a>
+    </div>
+  </aside>
+
+  <div id="sidebarBackdrop" class="fixed inset-0 bg-black/30 z-40 hidden lg:hidden" onclick="toggleSidebar()"></div>
+
+  <div class="flex-1 flex flex-col min-w-0">
+    <header class="h-16 bg-white border-b px-4 sm:px-6 flex items-center justify-between sticky top-0 z-30">
+      <div class="flex items-center gap-3">
+        <button onclick="toggleSidebar()" class="lg:hidden p-2 rounded text-gray-600 hover:bg-gray-100">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <h1 class="text-lg font-semibold text-gray-800">Dashboard</h1>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <a href="products.html" class="btn btn-primary btn-sm">Lihat Data Barang</a>
+      </div>
+    </header>
+
+    <main class="flex-1 p-4 sm:p-6 space-y-6">
+      <div>
+        <h2 class="text-xl font-bold text-gray-800">Ringkasan Toko</h2>
+        <p class="text-sm text-gray-500">Informasi ringkas data barang dan transaksi</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="card">
+          <p class="text-xs font-medium text-gray-500 uppercase">Total Barang</p>
+          <h3 class="text-2xl font-bold text-gray-800 mt-1">142</h3>
+          <p class="text-xs text-gray-400 mt-2">Item terdaftar di sistem</p>
+        </div>
+
+        <div class="card">
+          <p class="text-xs font-medium text-gray-500 uppercase">Total Transaksi</p>
+          <h3 class="text-2xl font-bold text-gray-800 mt-1">85</h3>
+          <p class="text-xs text-green-600 mt-2">Bulan ini</p>
+        </div>
+
+        <div class="card">
+          <p class="text-xs font-medium text-gray-500 uppercase">Pendapatan</p>
+          <h3 class="text-2xl font-bold text-gray-800 mt-1">Rp 12.450.000</h3>
+          <p class="text-xs text-gray-400 mt-2">Total penjualan</p>
+        </div>
+
+        <div class="card">
+          <p class="text-xs font-medium text-gray-500 uppercase">Stok Menipis</p>
+          <h3 class="text-2xl font-bold text-red-600 mt-1">4</h3>
+          <p class="text-xs text-red-600 mt-2">Perlu belanja stok</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="lg:col-span-2 card">
+          <div class="card-header">
+            <h3 class="card-title">Transaksi Terakhir</h3>
+            <a href="#" class="text-xs text-blue-600 hover:underline">Semua</a>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="table-th">No. Nota</th>
+                  <th class="table-th">Pelanggan</th>
+                  <th class="table-th">Total</th>
+                  <th class="table-th">Status</th>
+                  <th class="table-th text-right">Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="table-td font-medium">TRX-20261001</td>
+                  <td class="table-td">Budi Santoso</td>
+                  <td class="table-td">Rp 165.000</td>
+                  <td class="table-td"><span class="badge badge-success">Lunas</span></td>
+                  <td class="table-td text-right"><button class="btn btn-outline btn-sm">Detail</button></td>
+                </tr>
+                <tr>
+                  <td class="table-td font-medium">TRX-20261002</td>
+                  <td class="table-td">Toko Maju Jaya</td>
+                  <td class="table-td">Rp 850.000</td>
+                  <td class="table-td"><span class="badge badge-success">Lunas</span></td>
+                  <td class="table-td text-right"><button class="btn btn-outline btn-sm">Detail</button></td>
+                </tr>
+                <tr>
+                  <td class="table-td font-medium">TRX-20261003</td>
+                  <td class="table-td">CV Mandiri</td>
+                  <td class="table-td">Rp 1.450.000</td>
+                  <td class="table-td"><span class="badge badge-warning">Proses</span></td>
+                  <td class="table-td text-right"><button class="btn btn-outline btn-sm">Detail</button></td>
+                </tr>
+                <tr>
+                  <td class="table-td font-medium">TRX-20261004</td>
+                  <td class="table-td">Dewi Sartika</td>
+                  <td class="table-td">Rp 75.000</td>
+                  <td class="table-td"><span class="badge badge-success">Lunas</span></td>
+                  <td class="table-td text-right"><button class="btn btn-outline btn-sm">Detail</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Peringatan Stok</h3>
+            <a href="products.html" class="text-xs text-blue-600 hover:underline">Kelola</a>
+          </div>
+
+          <div class="space-y-3">
+            <div class="p-3 rounded bg-gray-50 flex items-center justify-between border">
+              <div>
+                <p class="text-sm font-medium text-gray-800">Kertas HVS A4 75gr</p>
+                <p class="text-xs text-red-600 font-semibold">Sisa stok: 2 rim</p>
+              </div>
+              <a href="products.html" class="btn btn-outline btn-sm">Beli</a>
+            </div>
+
+            <div class="p-3 rounded bg-gray-50 flex items-center justify-between border">
+              <div>
+                <p class="text-sm font-medium text-gray-800">Bolpoin Standard Hitam</p>
+                <p class="text-xs text-yellow-600 font-semibold">Sisa stok: 3 pack</p>
+              </div>
+              <a href="products.html" class="btn btn-outline btn-sm">Beli</a>
+            </div>
+
+            <div class="p-3 rounded bg-gray-50 flex items-center justify-between border">
+              <div>
+                <p class="text-sm font-medium text-gray-800">Tinta Printer Epson Black</p>
+                <p class="text-xs text-red-600 font-semibold">Sisa stok: 1 botol</p>
+              </div>
+              <a href="products.html" class="btn btn-outline btn-sm">Beli</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="py-4 px-6 border-t bg-white text-center text-xs text-gray-400">
+      &copy; 2026 Sistem Toko. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('-translate-x-full');
+      document.getElementById('sidebarBackdrop').classList.toggle('hidden');
+    }
+  </script>
+
+</body>
+</html>
