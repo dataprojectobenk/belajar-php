@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Sistem Toko</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-layout">
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">ST</div>
+        <div>
+          <h2 class="font-bold" style="line-height: 1.2;">Sistem Toko</h2>
+          <span class="text-xs text-muted">Admin Panel</span>
+        </div>
+      </div>
+
+      <div class="sidebar-menu">
+        <span class="sidebar-label">Menu Utama</span>
+        <a href="dashboard.html" class="sidebar-link active">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="products.html" class="sidebar-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+          <span>Data Barang</span>
+        </a>
+        <a href="product-form.html" class="sidebar-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v16m8-8H4"/></svg>
+          <span>Tambah Barang</span>
+        </a>
+
+        <span class="sidebar-label" style="margin-top: 1rem;">Manajemen</span>
+        <a href="#" class="sidebar-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg>
+          <span>Kategori</span>
+        </a>
+        <a href="#" class="sidebar-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+          <span>Transaksi</span>
+        </a>
+        <a href="#" class="sidebar-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          <span>Laporan</span>
+        </a>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="flex items-center gap-2 mb-3">
+          <div style="width: 32px; height: 32px; border-radius: 50%; background: #dbeafe; color: #1d4ed8; font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: 12px;">A</div>
+          <div>
+            <div class="font-semibold" style="font-size: 13px;">Administrator</div>
+            <div class="text-xs text-muted">admin</div>
+          </div>
+        </div>
+        <a href="login.html" class="btn btn-outline w-full text-xs" style="color: #dc2626;">Logout</a>
+      </div>
+    </aside>
+
+    <div id="backdrop" class="backdrop hidden" onclick="toggleSidebar()"></div>
+
+    <div class="main-content">
+      <header class="topbar">
+        <div class="flex items-center gap-3">
+          <button class="menu-toggle" onclick="toggleSidebar()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+          <h1 class="font-semibold" style="font-size: 1.125rem;">Dashboard</h1>
+        </div>
+        <a href="products.html" class="btn btn-primary btn-sm">Lihat Data Barang</a>
+      </header>
+
+      <main class="content-body">
+        <div>
+          <h2 class="font-bold" style="font-size: 1.25rem;">Ringkasan Toko</h2>
+          <p class="text-sm text-muted">Informasi ringkas data barang dan transaksi</p>
+        </div>
+
+        <div class="grid grid-4">
+          <div class="card">
+            <span class="text-xs font-semibold text-muted" style="text-transform: uppercase;">Total Barang</span>
+            <div class="font-bold" style="font-size: 1.5rem; margin-top: 0.25rem;">142</div>
+            <div class="text-xs text-muted mt-2">Item terdaftar di sistem</div>
+          </div>
+          <div class="card">
+            <span class="text-xs font-semibold text-muted" style="text-transform: uppercase;">Total Transaksi</span>
+            <div class="font-bold" style="font-size: 1.5rem; margin-top: 0.25rem;">85</div>
+            <div class="text-xs text-success mt-2">Bulan ini</div>
+          </div>
+          <div class="card">
+            <span class="text-xs font-semibold text-muted" style="text-transform: uppercase;">Pendapatan</span>
+            <div class="font-bold" style="font-size: 1.5rem; margin-top: 0.25rem;">Rp 12.450.000</div>
+            <div class="text-xs text-muted mt-2">Total penjualan</div>
+          </div>
+          <div class="card">
+            <span class="text-xs font-semibold text-muted" style="text-transform: uppercase;">Stok Menipis</span>
+            <div class="font-bold text-danger" style="font-size: 1.5rem; margin-top: 0.25rem;">4</div>
+            <div class="text-xs text-danger mt-2">Perlu belanja stok</div>
+          </div>
+        </div>
+
+        <div class="grid dashboard-grid">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Transaksi Terakhir</h3>
+              <a href="#" class="text-xs text-primary">Semua</a>
+            </div>
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th class="table-th">No. Nota</th>
+                    <th class="table-th">Pelanggan</th>
+                    <th class="table-th">Total</th>
+                    <th class="table-th">Status</th>
+                    <th class="table-th text-right">Aksi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="table-td font-medium">TRX-20261001</td>
+                    <td class="table-td">Budi Santoso</td>
+                    <td class="table-td">Rp 165.000</td>
+                    <td class="table-td"><span class="badge badge-success">Lunas</span></td>
+                    <td class="table-td text-right"><button class="btn btn-outline btn-sm">Detail</button></td>
+                  </tr>
+                  <tr>
+                    <td class="table-td font-medium">TRX-20261002</td>
+                    <td class="table-td">Toko Maju Jaya</td>
+                    <td class="table-td">Rp 850.000</td>
+                    <td class="table-td"><span class="badge badge-success">Lunas</span></td>
+                    <td class="table-td text-right"><button class="btn btn-outline btn-sm">Detail</button></td>
+                  </tr>
+                  <tr>
+                    <td class="table-td font-medium">TRX-20261003</td>
+                    <td class="table-td">CV Mandiri</td>
+                    <td class="table-td">Rp 1.450.000</td>
+                    <td class="table-td"><span class="badge badge-warning">Proses</span></td>
+                    <td class="table-td text-right"><button class="btn btn-outline btn-sm">Detail</button></td>
+                  </tr>
+                  <tr>
+                    <td class="table-td font-medium">TRX-20261004</td>
+                    <td class="table-td">Dewi Sartika</td>
+                    <td class="table-td">Rp 75.000</td>
+                    <td class="table-td"><span class="badge badge-success">Lunas</span></td>
+                    <td class="table-td text-right"><button class="btn btn-outline btn-sm">Detail</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Peringatan Stok</h3>
+              <a href="products.html" class="text-xs text-primary">Kelola</a>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+              <div class="card" style="padding: 0.75rem; background: #f9fafb; display: flex; align-items: center; justify-content: space-between;">
+                <div>
+                  <div class="font-medium" style="font-size: 13px;">Kertas HVS A4 75gr</div>
+                  <div class="text-xs text-danger font-semibold">Sisa stok: 2 rim</div>
+                </div>
+                <a href="products.html" class="btn btn-outline btn-sm">Beli</a>
+              </div>
+              <div class="card" style="padding: 0.75rem; background: #f9fafb; display: flex; align-items: center; justify-content: space-between;">
+                <div>
+                  <div class="font-medium" style="font-size: 13px;">Bolpoin Standard Hitam</div>
+                  <div class="text-xs text-warning font-semibold">Sisa stok: 3 pack</div>
+                </div>
+                <a href="products.html" class="btn btn-outline btn-sm">Beli</a>
+              </div>
+              <div class="card" style="padding: 0.75rem; background: #f9fafb; display: flex; align-items: center; justify-content: space-between;">
+                <div>
+                  <div class="font-medium" style="font-size: 13px;">Tinta Printer Epson Black</div>
+                  <div class="text-xs text-danger font-semibold">Sisa stok: 1 botol</div>
+                </div>
+                <a href="products.html" class="btn btn-outline btn-sm">Beli</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">&copy; 2026 Sistem Toko. All rights reserved.</footer>
+    </div>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('show');
+      document.getElementById('backdrop').classList.toggle('hidden');
+    }
+  </script>
+
+</body>
+</html>
+

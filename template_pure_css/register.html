@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Akun - Sistem Toko</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-wrapper">
+
+  <div class="auth-box">
+    <div class="text-center mb-6">
+      <h1 class="font-bold text-gray-800" style="font-size: 1.5rem;">Sistem Toko</h1>
+      <p class="text-sm text-muted mt-1">Buat akun baru admin</p>
+    </div>
+
+    <div class="card">
+      <form action="login.html" method="POST">
+        <div class="form-group">
+          <label class="form-label" for="nama">Nama Lengkap</label>
+          <input type="text" id="nama" class="form-input" placeholder="Nama lengkap Anda" required autofocus>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="username">Username</label>
+          <input type="text" id="username" class="form-input" placeholder="Username" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="password">Password</label>
+          <input type="password" id="password" class="form-input" placeholder="Password" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="konfirmasi_password">Ulangi Password</label>
+          <input type="password" id="konfirmasi_password" class="form-input" placeholder="Ulangi password" required>
+        </div>
+
+        <div class="mb-4">
+          <label class="flex items-center text-xs text-muted" style="cursor: pointer;">
+            <input type="checkbox" id="terms" style="margin-right: 0.5rem;" required> Saya menyetujui syarat & ketentuan
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-full">Daftar Akun</button>
+      </form>
+
+      <div class="mt-4 text-center text-sm text-muted" style="border-top: 1px solid #e5e7eb; padding-top: 1rem;">
+        Sudah punya akun? <a href="login.html" class="text-primary font-medium" style="text-decoration: underline;">Login</a>
+      </div>
+    </div>
+
+    <p class="text-center text-xs text-muted mt-6">&copy; 2026 Sistem Toko</p>
+  </div>
+
+</body>
+</html>
+
